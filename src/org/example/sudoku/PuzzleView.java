@@ -191,7 +191,7 @@ public class PuzzleView extends View {
 		private void select(int x, int y){
 			invalidate(selRect);
 			selX = Math.min(Math.max(x,0), 8);
-			selY = Math.min(Math.max(x,0), 8);
+			selY = Math.min(Math.max(y,0), 8);
 			getRect(selX, selY, selRect);
 			invalidate(selRect);
 		}

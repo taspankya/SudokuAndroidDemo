@@ -84,7 +84,7 @@ public class Game extends Activity {
 				if (t != 0)
 					c[t - 1] = t;
 			}
-			//horizontal
+			//vertical
 			for (int i = 0; i < 9; i++){
 				if (i == x)
 					continue;
