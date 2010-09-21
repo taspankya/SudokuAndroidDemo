@@ -197,7 +197,7 @@ public class PuzzleView extends View {
 		}
 		
 		@Override
-		public boolean onTouchEvent(MotionEvent){
+		public boolean onTouchEvent(MotionEvent event){
 			if(event.getAction() != MotionEvent.ACTION_DOWN)
 				return super.onTouchEvent(event);
 			
@@ -208,11 +208,11 @@ public class PuzzleView extends View {
 		}
 		
 		public void setSelectedTile(int tile){
-			if (game.setTitleIfValid(selX, selY, tile)){
+			if (game.setTileIfValid(selX, selY, tile)){
 				invalidate(); //may change hints
 			} else{
 				//Number is not valid for this tile
-				Log.d(TAG, "setSelectedTile: invalid: " + title);
+				Log.d(TAG, "setSelectedTile: invalid: " + tile);
 				startAnimation(AnimationUtils.loadAnimation(game, R.anim.shake));
 			}		
 		}
