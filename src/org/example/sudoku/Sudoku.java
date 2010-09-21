@@ -90,4 +90,16 @@ public class Sudoku extends Activity implements OnClickListener{
     	intent.putExtra(Game.KEY_DIFFICULTY, i);
     	startActivity(intent);
     }
+    
+    @Override
+    protected void onResume(){
+    	super.onResume();
+    	Music.play(this, R.raw.main);
+    }
+    
+    @Override
+    protected void onPause(){
+    	super.onPause();
+    	Music.stop(this);
+    }
 }
