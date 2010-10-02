@@ -29,6 +29,7 @@ public class Sudoku extends Activity implements OnClickListener{
         aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener(this);  
+        
     }
     public void onClick(View v){
     	//about button
@@ -48,8 +49,13 @@ public class Sudoku extends Activity implements OnClickListener{
     		finish();
     		break;
     	// continue
+
+        case R.id.continue_button:
+        	startGame(Game.DIFFICULTY_CONTINUE);
+        	break;
     	}
     }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
     	super.onCreateOptionsMenu(menu);
@@ -102,4 +108,5 @@ public class Sudoku extends Activity implements OnClickListener{
     	super.onPause();
     	Music.stop(this);
     }
+    
 }
